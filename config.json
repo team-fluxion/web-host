@@ -1,0 +1,51 @@
+{
+    "root_cert_path": "/etc/letsencrypt/live/<primary-domain>.com",
+    "domains": [
+	    {
+	        "server": "<primary-domain>.com",
+	        "cert_path": "/etc/letsencrypt/live/<primary-domain>.com"
+	    },
+	    {
+	        "server": "<secondary-domain>.net",
+	        "cert_path": "/etc/letsencrypt/live/<secondary-domain>.net"
+	    },
+	    {
+	        "server": "<ternary-domain>.org",
+	        "cert_path": "/etc/letsencrypt/live/<ternary-domain>.org"
+	    }
+    ],
+    "redirection": {
+	    "port": "8080",
+	    "redirects": [
+            {
+		        "from": [
+                    "example-that-redirects.<primary-domain>.com"
+		        ],
+		        "to": "https://this-redirection.<secondary-domain>.net"
+            }
+	    ],
+	    "defaultUrl": "https://www.<primary-domain>.com"
+    },
+    "websites" : [
+        {
+            "website": "one-web/src/server",
+            "host": "www.<primary-domain>.com",
+            "port": "8081"
+        },
+        {
+            "website": "two-web/src/server",
+            "host": "two.<primary-domain>.com",
+            "port": "8082"
+        },
+	    {
+	        "website": "secondary-web",
+	        "host": "<secondary-domain>.net",
+	        "port": "8083"
+	    },
+	    {
+	        "website": "ternary-web",
+	        "host": "<ternary-domain>.org",
+	        "port": "8084"
+	    }
+    ]
+}

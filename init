@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+root_dir="$(dirname "${BASH_SOURCE[0]}")"
+
+# Update system
+apt update && apt upgrade
+
+# Create 'apps' directory
+mkdir -p $root_dir/apps
+
+# Install dependencies
+apt install npm
+
+# Install npm packages
+npm install -g forever
