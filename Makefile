@@ -3,7 +3,6 @@ SHELL = /bin/sh
 ifeq ($(PREFIX),)
     PREFIX := /usr/local
 endif
-root_dir="$(dirname "${BASH_SOURCE[0]}")"
 
 help:
 	@echo "Use one of the following options:"
@@ -14,7 +13,7 @@ help:
 env:
 	@echo "Checking for dependencies..."
 	apt update && apt upgrade
-	mkdir -p $root_dir/apps
+	mkdir -p ~/web-host/apps
 	apt install npm
 	npm install -g forever
 
