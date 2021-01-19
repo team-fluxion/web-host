@@ -53,4 +53,6 @@ Once everything is place, use the below installed commands:
 
 ## To-do
 
-* (a lot of them coming soon...)
+* Switch to HTTP-only mode in absence of certificates
+* Include a working example
+* Improve commands and API
