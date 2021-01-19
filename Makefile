@@ -29,10 +29,10 @@ place:
 	@echo "Commands installed"
 
 install: env place
-	@echo "foraget is now installed!"
+	@echo "web-host is now installed!"
 
 uninstall:
-	@echo "Uninstalling foraget..."
+	@echo "Uninstalling web-host..."
 	sudo rm $(PREFIX)/bin/host-start
 	sudo rm $(PREFIX)/bin/host-stop
 	sudo rm $(PREFIX)/bin/host-restart

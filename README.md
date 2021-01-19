@@ -1,6 +1,6 @@
 # web-host
 
-[![License](https://img.shields.io/github/license/myTerminal/foraget.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/github/license/team-fluxion/web-host.svg)](https://opensource.org/licenses/MIT)
 
 A host for serving multiple domains and sub-domains with redirection and more
 
@@ -21,7 +21,7 @@ Clone the project at the home directory. This is currently a requirement that ma
     git clone https://github.com/team-fluxion/web-host.git
 
     # Switch to project directory
-    cd foraget
+    cd web-host
 
     # Install dependencies and commands with `make`
     make install
