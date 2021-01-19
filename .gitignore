@@ -3,11 +3,11 @@
 !/bin
 !/scripts
 
-!/init
 !/config.json
 !/offline.html
 !/package*.json
 
+!/Makefile
 !/README.md
 !/LICENSE
 
