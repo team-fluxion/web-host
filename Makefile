@@ -13,7 +13,7 @@ help:
 env:
 	@echo "Checking for dependencies..."
 	apt update && apt upgrade
-	mkdir -p ~/web-host/apps
+	mkdir -p /var/web-host/apps
 	apt install npm
 	npm install -g forever
 
