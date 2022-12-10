@@ -34,6 +34,8 @@ Or you can also re-install:
 
     make reinstall
 
+> **PS:** [SystemD](https://www.freedesktop.org/wiki/Software/systemd) is required to be the init system.
+
 ## How to Use
 
 1. Place websites to host under the `apps` directory. Each website only needs to provide a script that exposes a single default function accepting an argument as the port that it listens on.
@@ -53,6 +55,7 @@ Once everything is place, use the below installed commands:
 
 ## To-do
 
+* Add support for other init systems
 * Switch to HTTP-only mode in absence of certificates
 * Include a working example
 * Improve commands and API

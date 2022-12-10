@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-sh /var/web-host/bin/host-restart
+echo "Resuming..."
+systemctl stop web-host-offline.service
+systemctl start web-host-online.service
