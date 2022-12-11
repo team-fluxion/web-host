@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 echo "Starting websites..."
-sudo forever start /var/web-host/scripts/index.js -uid tf-web-host
+systemctl start web-host-online.service

@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-sudo forever list
+systemctl status web-host-online.service
+systemctl status web-host-offline.service

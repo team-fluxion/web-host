@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-sh /var/web-host/bin/host-stop
-sudo forever start /var/web-host/scripts/offline.js -uid tf-web-host
+echo "Going offline..."
+systemctl stop web-host-online.service
+systemctl start web-host-offline.service

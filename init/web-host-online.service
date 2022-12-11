@@ -1,0 +1,13 @@
+[Unit]
+Description=web-host offline service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+ExecStart=node /var/web-host/scripts/index.js
+
+[Install]
+WantedBy=multi-user.target

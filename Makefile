@@ -15,19 +15,24 @@ env:
 	apt update && apt upgrade
 	mkdir -p /var/web-host/apps
 	apt install npm
-	npm install -g forever
 
 place:
 	@echo "Installing commands..."
-	sudo install ./bin/host-start $(PREFIX)/bin/
-	sudo install ./bin/host-stop $(PREFIX)/bin/
-	sudo install ./bin/host-restart $(PREFIX)/bin/
-	sudo install ./bin/host-offline $(PREFIX)/bin/
-	sudo install ./bin/host-resume $(PREFIX)/bin/
-	sudo install ./bin/host-status $(PREFIX)/bin/
+	sudo install ./bin/* $(PREFIX)/bin/
 	@echo "Commands installed"
 
-install: env place
+service:
+	@echo "Looking for a known init system..."
+ifneq ($(shell command -v systemctl),)
+	@echo "'SystemD' found. Attempting to create a service..."
+	sudo cp ./init/* /etc/systemd/system/
+	systemctl enable web-host-online.service
+	@echo "SystemD service created and started."
+else
+	@echo "No known init system found."
+endif
+
+install: env place service
 	@echo "web-host is now installed!"
 
 uninstall:
@@ -38,6 +43,9 @@ uninstall:
 	sudo rm $(PREFIX)/bin/host-offline
 	sudo rm $(PREFIX)/bin/host-resume
 	sudo rm $(PREFIX)/bin/host-status
+ifneq ($(shell command -v systemctl),)
+	sudo rm /etc/systemd/system/web-host-online.service /etc/systemd/system/web-host-offline.service
+endif
 	@echo "Uninstallation was successful!"
 
 reinstall: uninstall install
